@@ -1,6 +1,6 @@
 //  create time obj for current time for when the page loads 
- var timeblock= document.getElementsByClassName("time-block");
- var savebtn =document.getElementsByClassName("savebtn");
+ var timeblock= $(".time-block");
+ var savebtn =$(".saveBtn");
 
 
  var today= moment();
@@ -9,27 +9,29 @@
 // grab the current hour from the moment
 
 function localStorageFunctions() {
-for (let index = 0; index < numbers.length; index++) {
-  $("textarea")[index].value = localStorage.getItem("textarea" + String(index + 1));
+   localStorage.getItem
 }
-}
-$("savebtn").on("click", function (event) { 
+
+savebtn.on("click", function (event) { 
 event.preventDefault();
-for (let index = 0; index < numbers.length; index++) {
-  localStorage.setItem('textarea' + String(index + 1), $("textarea")[index].value)
+console.log(event)
+var inputEl = $(event.target).siblings("input")
+var parentEl = $(event.target).parent()
+console.log(inputEl)
+JSON.stringify(localStorage.setItem())("tasks", {hour: parentEl.id, value: inputEl.val()  })
 }
-});
+);
 
     var currentTime = moment().hours()
-    for (let i = 0; i = timeblock.length; i++){
+    for (let i = 0; i < timeblock.length; i++){
     var hour = timeblock[i].id
-    console.log(this)
+    console.log(hour)
     if (hour < currentTime ) {
-        $(this).addClass ("past");}
+      $(this).addClass ("past");}
 // esle if for present
         else if ( currentTime === hour){
-        $(this).removeClass("past");
-        $(this).addClass ("present");
+          $(this).removeClass("past");
+          $(this).addClass ("present");
 // else for future
       } 
       else  {
@@ -39,7 +41,4 @@ for (let index = 0; index < numbers.length; index++) {
       }
 
     };
-
-
-
     
