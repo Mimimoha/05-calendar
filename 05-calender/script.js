@@ -3,28 +3,29 @@
  var savebtn =$(".saveBtn");
 
 
+
  var today= moment();
  $('#current').text(today.format("MMM Do YY")); 
 
 // grab the current hour from the moment
 
 function localStorageFunctions() {
-   localStorage.getItem
+  $("#8 textarea").val(localStorage.getItem("8"))
 }
 
 savebtn.on("click", function (event) { 
 event.preventDefault();
 console.log(event)
-var inputEl = $(event.target).siblings("input")
-var parentEl = $(event.target).parent()
+var inputEl = $(savebtn).siblings("textarea").val()
+var parentEl = $(savebtn).parent().attr("id")
 console.log(inputEl)
-JSON.stringify(localStorage.setItem())("tasks", {hour: parentEl.id, value: inputEl.val()  })
+(localStorage.setItem(parentEl,inputEl))
 }
 );
 
     var currentTime = moment().hours()
-    for (let i = 0; i < timeblock.length; i++){
-    var hour = timeblock[i].id
+    $(timeblock).each(function (){
+    var hour = $(this).attr("id")
     console.log(hour)
     if (hour < currentTime ) {
       $(this).addClass ("past");}
@@ -40,5 +41,5 @@ JSON.stringify(localStorage.setItem())("tasks", {hour: parentEl.id, value: input
         $(this).addClass("future");
       }
 
-    };
-    
+    });
+    localStorageFunctions();
