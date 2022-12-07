@@ -1,32 +1,18 @@
-## User Story
+# My Calendar 
 
 
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
+## Description 
+My Calendar is a front end application that allows user to track their daily task using an hourly calendar 
 
 
-GIVEN I am using a daily planner to create a schedule
-WHEN the planner page is opened 
-THEN the current day is displayed at the top of the calendar
+## Usage
 
-WHEN client scrolls 
-THEN they are  presented with timeblocks for standard business hours
+AS AN employee with a busy schedule, I have created an calendar to better help me manage my time effectively. this calendar is able to add important events to a daily planner
 
-WHEN the client views the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-WHEN the client clicks into a timeblock
-THEN they can enter an event
 
-WHEN the client clicks the save button for that timeblock
-THEN the text for that event is saved in local storage
-
-WHEN the client the page
-THEN the saved events persist
+## Deployed Link
+[link](https://mimimoha.github.io/05-calendar/)
 
 
 
